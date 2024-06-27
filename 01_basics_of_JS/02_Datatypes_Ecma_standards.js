@@ -22,7 +22,7 @@ console.log("Printing Premitive Datatypes:")
 console.table([num,pi,str,isTrue,emptyValue,notAssigned,sym,bigInt]);
 
 
-//Object Types
+//Object Types //Refrence type
 /*Objects are collections of properties, and a property is an association between a name (or key) and a value. The value of a property can be a function, which is then known as a method. Objects are more complex and can be created using various methods, including object literals, constructor functions, and classes.*/
 
 //1 Object: Basic building block for more complex data structures.
@@ -60,3 +60,4 @@ console.log(typeof "Abhay");
 console.log(typeof arr);
 console.log(typeof pi);
 
+//stack(Premetive) copy of data  ,Heap (non-Primitive) original data no copy 
