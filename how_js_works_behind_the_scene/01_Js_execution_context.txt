@@ -1,0 +1,81 @@
+------------Javascript execution context------------
+js is single threded.all the things are process
+----------------------------------------------------
+1> global execturtion context                      |
+    eg=>this , for node this is window object      |
+2> functional execution context                    |
+one not so important execution context is          |----------------------
+3>Eval execution context .it is the property of global execution context.|
+--------------------------------------------------------------------------
+
+------------------How js code executes--------------
+js code executes in two parts
+--------------------------------------------------------------
+1>memory creation phase/creation phase: memory is allocated. |
+2>execution phase:execution is done                          |
+--------------------------------------------------------------
+example:
+-----------------------------------
+let val1= 10                      |
+let val2= 20                      |
+function addNum(num1,num2){       |
+    let total = num1+num2         |
+    return total                  |
+}                                 |
+let result1 = addNum(val1,val2)   |
+let result2 = addNum(2,3)         |
+-----------------------------------
+the process of execution->
+1>global execution->this
+2>memory creation phase->all variables are created ,this is the first cycle
+------------------------
+val1:undefined
+val2:undefined
+addNum:defination
+result1:undefined
+result2:undefined
+------------------------
+3> execution phase:
+------------------------
+val1:10
+val2:20
+result1: 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------------------------------------------
+//addNum or function creates new execution context and it consists opf new variable environment + execution thread
+    A>memory phase:
+        val1:undefined
+        val1:undefined
+        total:undefined
+    B>execution phase:
+        num1:10
+        num2:20
+        total:30
+        return to global execution context.
+        //delete after execution
+-------------------------------------------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+reuslt1:15;
+result2: 
+------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------------------------------------------
+//addNum or function creates new execution context and it consists opf new variable environment + execution thread
+    A>memory phase:
+    ------------------------
+        val1:undefined
+        val1:undefined
+        total:undefined
+    ------------------------
+    B>execution phase:
+    ------------------------
+        num1:2
+        num2:3
+        total:30
+    ------------------------
+        return to global execution context.
+        //delete after execution
+------------------------------------------------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+reuslt2:5;
+------------------------
