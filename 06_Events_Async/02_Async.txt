@@ -1,0 +1,39 @@
+JavaScript default behaviour: 
+1>synchronus. 
+2>single Threaded.
+
+Execution Context: execute one line of code at a time.
+
+Blocking code :  
+1>Block the flow of the Program 
+2>read file sync.
+
+Non Blocking code : 
+1>does not block the execution
+2> read file async.
+
+|---------------------|   |---------------------|       
+|     Js Engine       |   |      Web Api        |
+|---------|-----------|   |---------------------|
+| memory  | call Stack|   | Dom Api             | 
+| hash    |-----------| |-|-> Set Time OUT      |
+|         |           | | |  Set    |-----------| 
+|         |           | | |Interval |  Register |
+|         |    fn ----|-| | fetch() |call  stack|
+|         |    fn     |   |         |-----------|
+|         |    fn     |   |                     | 
+|         |  global f |   |---------|-----------|  
+|---------|-----------|
+                ^
+                |Add to call stack
+          -------
+          |
+          |
+          |                         Event LOOP
+|---------------------|
+|   |----|  |----|    |
+|   | CB |  | CB |    |
+|   |----|  |----|    |
+|---------------------|
+      Task Queue              
+                    
