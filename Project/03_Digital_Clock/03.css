@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+#main{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+   
+}
+
+#banner{
+    color:#ffffff;
+    margin:3px; 
+    font-size:20px;
+}
+#clock{
+    font-size:21px;
+    font-weight:bold;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color:#00f000;
+    margin-bottom:10px;
+    height: 3rem;
+    width:6.9rem;
+    padding:.25rem;
+    border-radius: .25rem;
+    color:#ffffff;
+}
