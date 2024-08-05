@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1 id="id1">ABHAY SETHI</H1>
+  <button id="stop"> stop </button>
+  <button id="start"> start </button>
+</body>
+<script>
+   const changeText = function(){
+    let x = document.getElementById('id1');
+    x.innerHTML = "Code with Abhay Sethi";
+    //console.log("abhay kumar sethi")
+}
+const changeMe = setTimeout(changeText, 2000);
+document.querySelector('#stop').addEventListener('click',(e)=>{
+    console.log("button clicked!");
+    clearTimeout(changeMe);
+    console.log("stopped");
+})
+const sayDate = function(){
+console.log("abhay kumar sethi",Date.now())
+    }
+ const intervalId =setInterval(sayDate,5000);
+ document.querySelector('#start').addEventListener('click',(e)=>{
+   // console.log("button clicked!");
+    clearTimeout(intervalId );
+    console.log("start");
+})
+
+</script>
+</html>
+
+
